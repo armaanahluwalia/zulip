@@ -7,10 +7,18 @@ var meta = {
 };
 
 function change_display_setting(data, status_element, success_msg, sticky) {
+    var $statusEl = $(status_element);
+    var statusIsSticky = $statusEl.data('isSticky');
+    var displayMessage = (statusIsSticky) ? $statusEl.data('stickyMsg') : success_msg;
     var opts = {
-        success_msg: success_msg,
-        sticky: sticky,
+        success_msg: displayMessage,
+        sticky: statusIsSticky || sticky,
     };
+
+    if (sticky) {
+        $statusEl.data('isSticky', true);
+        $statusEl.data('stickyMsg', success_msg);
+    }
     settings_ui.do_settings_change(channel.patch, '/json/settings/display', data, status_element, opts);
 }
 

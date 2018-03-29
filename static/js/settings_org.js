@@ -450,6 +450,42 @@ function _set_up() {
         var subsection = $(element).closest('.org-subsection-parent');
         return subsection.find("input[id^='id_realm_'], select[id^='id_realm_'], textarea[id^='id_realm_']");
     }
+    function changeSaveButtonState($element, state) {
+        var showHideElement = function (state) {
+            if (state === 'show') {
+              $element.removeClass('hide').addClass('show').animate({ opacity:1 }, 100);
+            } else {
+              $element.animate({opacity:0});
+            }
+        };
+        var $saveBtn = $('.save-button', $element);
+        if (state !== "saving") {
+            $saveBtn.removeClass('saving');
+        }
+        if (state === "unsaved") {
+            $('.icon-button-text', $saveBtn).text(i18n.t("Save Changes"));
+            $saveBtn.attr("data-status", "unsaved");
+            showHideElement('show');
+        } else if (state === "saved") {
+            $('.icon-button-text', $saveBtn).text(i18n.t("Save Changes"));
+            $saveBtn.attr("data-status", "");
+            showHideElement('hide');
+        } else if (state === "discarded") {
+            $element.removeClass('saving');
+            showHideElement('hide');
+        } else if (state === "saving") {
+            $saveBtn.addClass('saving');
+            $('.icon-button-text', $saveBtn).text(i18n.t("Saving"));
+            $saveBtn.attr("data-status", "saving");
+        } else if (state === "failed") {
+            $('.icon-button-text', $saveBtn).text(i18n.t("Save Changes"));
+            $saveBtn.attr("data-status", "failed");
+        } else if (state === 'succeeded') {
+            showHideElement('hide');
+            $('.icon-button-text', $saveBtn).text(i18n.t("Saved"));
+            $saveBtn.attr("data-status", "saved");
+        }
+    }
 
     $('.admin-realm-form').on('change input', 'input, select, textarea', function (e) {
         e.preventDefault();
@@ -464,46 +500,38 @@ function _set_up() {
             }
         });
 
-        var change_process_button = subsection.find('.subsection-header .button');
-        change_process_button.first().text(i18n.t("Save"));
-        if (show_change_process_button) {
-            change_process_button.removeClass('hide').addClass('show');
-        } else {
-            change_process_button.removeClass('show').addClass('hide');
-        }
+        var saveBtnControls = subsection.find('.subsection-header .save-button-controls');
+        var buttonState = (show_change_process_button) ? "unsaved" : "saved";
+        changeSaveButtonState(saveBtnControls, buttonState);
     });
 
-    $('.organization').on('click', '.subsection-header .subsection-changes-discard button', function (e) {
+    $('.organization').on('click', '.subsection-header .subsection-changes-discard .button', function (e) {
         e.preventDefault();
         e.stopPropagation();
         _.each(get_subsection_property_elements(e.target), discard_property_element_changes);
-        var subsection = $(e.target).closest('.org-subsection-parent');
-        var change_process_buttons = subsection.find('.subsection-header .button');
-        change_process_buttons.removeClass('show').addClass('hide');
+        var saveBtnControls = $(e.target).closest('.save-button-controls');
+        changeSaveButtonState(saveBtnControls, "discarded");
     });
 
     exports.save_organization_settings = function (data, save_button, success_continuation) {
         var subsection_parent = save_button.closest('.org-subsection-parent');
-        var discard_button = subsection_parent.find('.subsection-changes-discard button');
+        var saveBtnContainer = subsection_parent.find('.save-button-controls');
         var failed_alert_elem = subsection_parent.prevAll('.admin-realm-failed-change-status:first').expectOne();
-        save_button.text(i18n.t("Saving"));
-        save_button.attr("data-status", "saving");
+        changeSaveButtonState(saveBtnContainer, "saving");
         channel.patch({
             url: "/json/realm",
             data: data,
             success: function (response_data) {
-                discard_button.removeClass('show').addClass('hide');
                 failed_alert_elem.hide();
-                save_button.attr("data-status", "saved");
-                save_button.text(i18n.t("Saved"));
-                save_button.removeClass('hide').addClass('show').stop(true).fadeTo(0, 1);
+                setTimeout(function () {
+                  changeSaveButtonState(saveBtnContainer, "succeeded");
+                }, 500);
                 if (success_continuation !== undefined) {
                     success_continuation(response_data);
                 }
             },
             error: function (xhr) {
-                save_button.attr("data-status", "failed");
-                save_button.text(i18n.t("Save"));
+                changeSaveButtonState(saveBtnContainer, "failed");
                 ui_report.error(i18n.t("Failed"), xhr, failed_alert_elem);
             },
         });
@@ -583,10 +611,10 @@ function _set_up() {
         return opts;
     }
 
-    $(".organization").on("click", ".subsection-header .subsection-changes-save button", function (e) {
+    $(".organization").on("click", ".subsection-header .subsection-changes-save .button", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        var save_button = $(e.target);
+        var save_button = $(e.currentTarget);
         var subsection_id = save_button.attr('id').replace("org-submit-", "");
         var subsection = subsection_id.split('-').join('_');
 
