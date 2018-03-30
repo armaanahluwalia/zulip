@@ -33,10 +33,13 @@ exports.do_settings_change = function (request_method, url, data, status_element
     var success_msg;
     var success_continuation;
     var error_continuation;
+    var removeAfter = 1000;
+
     if (opts !== undefined) {
         success_msg = opts.success_msg;
         success_continuation = opts.success_continuation;
         error_continuation = opts.error_continuation;
+        if (opts.sticky) {removeAfter = null;}
     }
     if (success_msg === undefined) {
         success_msg = exports.strings.success;
@@ -46,8 +49,10 @@ exports.do_settings_change = function (request_method, url, data, status_element
         url: url,
         data: data,
         success: function (reponse_data) {
-            ui_report.success(success_msg, spinner);
-            settings_ui.display_checkmark(spinner);
+            setTimeout(function () {
+              ui_report.success(success_msg, spinner, null, removeAfter);
+              settings_ui.display_checkmark(spinner);
+            }, 500);
             if (success_continuation !== undefined) {
                 success_continuation(reponse_data);
             }
