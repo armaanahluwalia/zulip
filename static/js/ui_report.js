@@ -9,7 +9,7 @@ var exports = {};
    type- used to define more complex logic for special cases
 */
 
-exports.message = function (response, status_box, cls, type) {
+exports.message = function (response, status_box, cls, type, removeAfter) {
     if (cls === undefined) {
         cls = 'alert';
     }
@@ -22,7 +22,11 @@ exports.message = function (response, status_box, cls, type) {
     // via i18n.t when interpolating data.
     status_box.removeClass(common.status_classes).addClass(cls)
               .html(response).stop(true).fadeTo(0, 1);
-
+    if (removeAfter) {
+      setTimeout(function () {
+        status_box.fadeTo(200, 0);
+      }, removeAfter);
+    }
     status_box.addClass("show");
 };
 
@@ -45,8 +49,8 @@ exports.error = function (response, xhr, status_box, type) {
     exports.message(response, status_box, 'alert-error', type);
 };
 
-exports.success = function (response, status_box, type) {
-    exports.message(response, status_box, 'alert-success', type);
+exports.success = function (response, status_box, type, removeAfter) {
+    exports.message(response, status_box, 'alert-success', type, removeAfter);
 };
 
 exports.generic_embed_error = function (error) {
