@@ -20,7 +20,6 @@ var notifications_api;
 exports.set_notification_api = function (n) {
     notifications_api = n;
 };
-
 if (window.webkitNotifications) {
     notifications_api = window.webkitNotifications;
 } else if (window.Notification) {
@@ -34,6 +33,7 @@ if (window.webkitNotifications) {
         },
         requestPermission: window.Notification.requestPermission,
         createNotification: function createNotification(icon, title, content, tag) {
+            kjaskasdjadksj();
             var notification_object = new window.Notification(title, {icon: icon,
                                                                       body: content,
                                                                       tag: tag});

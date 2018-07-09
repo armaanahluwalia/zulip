@@ -119,11 +119,10 @@ function report_error(msg, stack, opts) {
     if (stack === undefined) {
         stack = 'No stacktrace available';
     }
-
+    stack = getErrorStack(stack);
     if (page_params.debug_mode) {
         // In development, we display blueslip errors in the web UI,
         // to make them hard to miss.
-        stack = getErrorStack(stack);
         exports.display_errors_on_screen(msg, stack);
     }
 
