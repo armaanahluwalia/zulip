@@ -3,9 +3,11 @@ import * as BundleTracker from 'webpack-bundle-tracker';
 import * as webpack from 'webpack';
 import { getExposeLoaders, getImportLoaders } from './webpack-helpers';
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
+var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 const assets = require('./webpack.assets.json');
-
 // Adds on css-hot-loader in dev mode
 function getHotCSS(bundle:any[], isProd:boolean) {
     if(isProd) {
@@ -104,6 +106,11 @@ export default (env?: string) : webpack.Configuration => {
         // We prefer it over eval since eval has trouble setting
         // breakpoints in chrome.
         devtool: production ? 'source-map' : 'cheap-module-source-map',
+        optimization: {
+          runtimeChunk: {
+              name: 'runtime'
+          }
+        }
     };
 
     // Add variables within modules
@@ -142,6 +149,16 @@ export default (env?: string) : webpack.Configuration => {
 
     if (production) {
         config.plugins = [
+            new HtmlWebpackPlugin({
+                chunks: ['runtime'],
+                template: 'static/templates/webpack_runtime_template.html',
+                filename: 'webpack-runtime.html',
+                alwaysWriteToDisk: true,
+            }),
+            new InlineManifestWebpackPlugin(),
+            new HtmlWebpackHarddiskPlugin({
+                outputPath: resolve(__dirname, '../templates')
+            }),
             new BundleTracker({filename: 'webpack-stats-production.json'}),
             // Extract CSS from files
             new MiniCssExtractPlugin({
@@ -154,8 +171,8 @@ export default (env?: string) : webpack.Configuration => {
                     }
                     return '[name].[contenthash].css';
                 },
-                chunkFilename: "[chunkhash].css"
-            })
+                chunkFilename: "[name].[chunkhash].css"
+            }),
         ];
     } else {
         // Out JS debugging tools
@@ -163,6 +180,43 @@ export default (env?: string) : webpack.Configuration => {
 
         config.output.publicPath = '/webpack/';
         config.plugins = [
+            /*
+                These 3 Plugins (HtmlWebpackPlugin, InlineManifestWebpackPlugin
+                and HtmlWebpackHarddiskPlugin) are used to write the webpack
+                "runtime" to disk in combination with the
+                optimization.runtimeChunk option.
+
+                Essentially what this does is tells webpack
+                to write the runtime to a separate chunk called runtime
+                and then the following webpack plugins each do their
+                job to be able extract it, inline it to a html template
+                and write it to disk. Subsequently that dynamically
+                generated webpack_runtime_template is then 'included'
+                by base.html template in Django.
+
+                This enables multiple modules to run on the same
+                page which would otherwise cause issues like expose-loader
+                not applying across different bundles, multiple versions
+                of the runtime on the same page etc.
+
+                Potentially this hack could be replaced by using the built-in
+                webpack code-splitting feature however, we're currently not
+                able to use it easily due to django-webpack-loader plugin
+                not supporting this feature for Webpack 4.
+
+                See https://github.com/owais/django-webpack-loader/issues/157
+                and https://github.com/owais/django-webpack-loader/issues/165
+            */
+            new HtmlWebpackPlugin({
+                chunks: ['runtime'],
+                template: 'static/templates/webpack_runtime_template.html',
+                filename: 'webpack-runtime.html',
+                alwaysWriteToDisk: true,
+            }),
+            new InlineManifestWebpackPlugin(),
+            new HtmlWebpackHarddiskPlugin({
+                outputPath: resolve(__dirname, '../templates')
+            }),
             new BundleTracker({filename: 'var/webpack-stats-dev.json'}),
             // Better logging from console for hot reload
             new webpack.NamedModulesPlugin(),
@@ -170,8 +224,8 @@ export default (env?: string) : webpack.Configuration => {
             new webpack.LoaderOptionsPlugin({debug: true}),
             // Extract CSS from files
             new MiniCssExtractPlugin({
-                filename: "[name].css",
-                chunkFilename: "[chunkhash].css"
+                filename: "[name].[contenthash].css",
+                chunkFilename: "[name].[chunkhash].css"
             }),
         ];
         config.devServer = {
