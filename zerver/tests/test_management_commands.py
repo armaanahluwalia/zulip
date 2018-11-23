@@ -283,7 +283,7 @@ class TestPasswordRestEmail(ZulipTestCase):
         call_command(self.COMMAND_NAME, users=self.example_email("iago"))
         from django.core.mail import outbox
         from_email = outbox[0].from_email
-        self.assertIn("Zulip Account Security", from_email)
+        self.assertIn("Loop Zero Account Security", from_email)
         tokenized_no_reply_email = parseaddr(from_email)[1]
         self.assertTrue(re.search(self.TOKENIZED_NOREPLY_REGEX, tokenized_no_reply_email))
         self.assertIn("Psst. Word on the street is that you", outbox[0].body)

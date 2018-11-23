@@ -2,12 +2,12 @@
     <div data-process="notifications" class="alert alert-info">
         <span class="close" data-dismiss="alert" aria-label="{{ _('Close') }}">&times;</span>
         <div data-step="1">
-            {% trans %}Zulip needs your permission to
+            {% trans %}Loop Zero needs your permission to
             <a class="request-desktop-notifications alert-link">enable desktop notifications.</a>
             {% endtrans %}
         </div>
         <div data-step="2" style="display: none">
-            {{ _('We strongly recommend enabling desktop notifications. They help Zulip keep your team connected.') }}
+            {{ _('We strongly recommend enabling desktop notifications. They help Loop Zero keep your team connected.') }}
             <span class="buttons">
                 <a class="alert-link request-desktop-notifications">{{ _('Enable notifications') }}</a>
                 &bull;
@@ -20,7 +20,7 @@
     <div data-process="email-server" class="alert alert-info red">
         <span class="close" data-dismiss="alert" aria-label="{{ _('Close') }}">&times;</span>
         <div data-step="1">
-            {% trans %}Zulip needs to send email to confirm users' addresses and send notifications.{% endtrans %}
+            {% trans %}Loop Zero needs to send email to confirm users' addresses and send notifications.{% endtrans %}
             <a class="alert-link" href="https://zulip.readthedocs.io/en/latest/production/email.html" target="_blank">
                 {% trans %}See how to configure email.{% endtrans %}
             </a>
@@ -31,9 +31,8 @@
     <nav class="header-main rightside-userlist" id="top_navbar">
         <div class="column-left">
             <a class="brand no-style" href="#">
-                <img src="/static/images/logo/zulip-icon-128x128.png" class="nav-logo no-drag" alt=""/>
+                <img src="/static/images/logo/loopzero_logo_small.png" class="nav-logo no-drag" alt=""/>
                 <div class="company-name">
-                    zulip
                 </div>
             </a>
         </div>
@@ -186,7 +185,7 @@
                             <li class="divider" role="presentation"></li>
                             {% endif %}
                             {% if show_webathena %}
-                            <li title="{% trans %}Grant Zulip the Kerberos tickets needed to run your Zephyr mirror via Webathena{% endtrans %}" id="webathena_login_menu" role="presentation">
+                            <li title="{% trans %}Grant Loop Zero the Kerberos tickets needed to run your Zephyr mirror via Webathena{% endtrans %}" id="webathena_login_menu" role="presentation">
                                 <a href="#webathena" class="webathena_login" role="menuitem">
                                     <i class="fa fa-bolt" aria-hidden="true"></i>{{ _('Link with Webathena') }}
                                 </a>

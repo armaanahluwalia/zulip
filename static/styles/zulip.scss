@@ -39,8 +39,20 @@ blockquote p {
 
 a {
     cursor: pointer;
+    color: hsl(248, 63%, 60%);
+    &:hover {
+        color: hsl(236, 100%, 64%);
+    }
 }
-
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus
+{
+    border-color: hsl(248, 63%, 60%);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px hsl(248, 63%, 60%);
+}
+.actual-dropdown-menu li > a:hover, .dropdown-menu li > a:focus {
+    background-color: hsl(236, 57%, 63%);
+    background-image: none;
+}
 .no-select {
     @include prefixed-user-select(none);
 }
@@ -194,7 +206,7 @@ p.n-margin {
 }
 
 #panels .alert.alert-info {
-    background-color: hsl(170, 46%, 54%);
+    background-color: hsl(230, 29%, 48%);
 }
 
 #panels .alert.alert-info.red {
@@ -206,7 +218,7 @@ p.n-margin {
 }
 
 #panels .alert .alert-link {
-    color: hsl(169, 100%, 88%);
+    color: hsl(42, 100%, 88%);
     font-weight: 600;
 }
 
@@ -492,8 +504,8 @@ pre code {
 /* Style inline code inside a link
    to look more like a normal link */
 a code {
-    color: hsl(200, 100%, 40%);
-    border-color: hsl(200, 100%, 40%);
+    color: hsl(236, 100%, 64%);
+    border-color: hsl(236, 100%, 64%);
 }
 
 a:hover code {
@@ -1041,7 +1053,7 @@ td.pointer {
 
 .private-message .messagebox,
 .message_header_private_message .message-header-contents {
-    background-color: hsla(192, 19%, 75%, 0.2);
+    background-color: hsla(225, 50%, 97%, 0.7);
     box-shadow: inset 1px 1px 0px hsl(0, 0%, 88%);
 }
 
@@ -1050,7 +1062,7 @@ td.pointer {
 }
 
 .mention .messagebox {
-    background-color: hsl(8, 94%, 94%);
+    background-color: hsl(40, 27%, 91%);
 }
 
 .messagebox .message_top_line {
@@ -1103,11 +1115,11 @@ td.pointer {
 
 .selected_message .messagebox-content {
     box-shadow:
-        inset 0px 0px 0px 2px hsl(215, 47%, 50%),
-        -1px -1px 0px 0px hsl(215, 47%, 50%),
-        1px 1px 0px 0px hsl(215, 47%, 50%),
-        -1px 1px 0px 0px hsl(215, 47%, 50%),
-        1px -1px 0px 0px hsl(215, 47%, 50%);
+        inset 0px 0px 0px 2px hsl(236, 100%, 64%),
+        -1px -1px 0px 0px hsl(236, 100%, 64%),
+        1px 1px 0px 0px hsl(236, 100%, 64%),
+        -1px 1px 0px 0px hsl(236, 100%, 64%),
+        1px -1px 0px 0px hsl(236, 100%, 64%);
 }
 
 .message_sender {
@@ -1148,7 +1160,7 @@ td.pointer {
 
 .sender_name_hovered .sender_name,
 .sender_name_hovered .sender_name-in-status {
-    color: hsl(200, 100%, 40%);
+    color: hsl(236, 100%, 64%);
 }
 
 .message_sender i.zulip-icon.bot,
@@ -1167,7 +1179,7 @@ td.pointer {
 }
 
 .actions_hover:hover {
-    color: hsl(200, 100%, 40%);
+    color: hsl(236, 100%, 64%);
 }
 
 .message_failed,
@@ -1185,7 +1197,7 @@ td.pointer {
 
 a.message_label_clickable:hover {
     cursor: pointer;
-    color: hsl(200, 100%, 40%);
+    color: hsl(236, 100%, 64%);
 }
 
 .on_hover_topic_edit {
@@ -1221,7 +1233,7 @@ a.message_label_clickable:hover {
 
 .edit_content:hover {
     cursor: pointer;
-    color: hsl(200, 100%, 40%);
+    color: hsl(236, 100%, 64%);
 }
 
 .message_controls > .reaction_button {
@@ -1231,7 +1243,7 @@ a.message_label_clickable:hover {
 }
 
 .message_controls > .reaction_button:hover {
-    color: hsl(200, 100%, 40%);
+    color: hsl(236, 100%, 64%);
 }
 
 .message_hovered .info,
@@ -1275,7 +1287,7 @@ a.dark_background:hover,
 
 .actions_hovered .message_time,
 .actions_hovered .info {
-    color: hsl(200, 100%, 40%);
+    color: hsl(236, 100%, 64%);
     cursor: pointer;
 }
 
@@ -1414,7 +1426,7 @@ div.focused_table {
 .message_length_controller {
     display: none;
     text-align: center;
-    color: hsl(200, 100%, 40%);
+    color: hsl(236, 100%, 64%);
 
     /* to match .message_content */
     margin-left: 5px;
@@ -1827,7 +1839,6 @@ nav .column-left .nav-logo {
     display: inline-block;
     vertical-align: top;
     margin-top: 8px;
-    width: 25px;
     height: 25px;
 }
 
@@ -1839,7 +1850,7 @@ nav .column-left .company-name {
     margin-left: 8px;
     font-size: 1.2rem;
     font-weight: 600;
-    color: hsl(170, 48%, 54%);
+    color: hsl(236, 48%, 54%);
     letter-spacing: 0.1em;
     cursor: pointer;
 }
@@ -2180,7 +2191,7 @@ div.floating_recipient {
 }
 
 .highlight_text_inserted {
-    color: hsl(122, 72%, 30%);
+    color: hsl(236, 72%, 30%);
     background-color: hsl(120, 64%, 95%);
 }
 
@@ -2559,7 +2570,7 @@ div.topic_edit_spinner .loading_indicator_spinner {
 .star:not(.empty-star) {
     opacity: 1 !important;
     pointer-events: all !important;
-    color: hsl(106, 77%, 29%);
+    color: hsl(236, 77%, 29%);
 }
 
 .messagebox:hover .message_controls .empty-star {
@@ -2573,7 +2584,7 @@ div.topic_edit_spinner .loading_indicator_spinner {
 
 .star:hover {
     cursor: pointer;
-    color: hsl(153, 80%, 25%);
+    color: hsl(236, 80%, 25%);
 }
 
 /* FIXME: Combine this rule with the one in portico.css somehow? */
@@ -2723,29 +2734,23 @@ div.topic_edit_spinner .loading_indicator_spinner {
 
 .user-group-mention,
 .user-mention {
-    background-color: hsl(0, 0%, 93%);
+    background-color: #ededed;
     border-radius: 3px;
     padding: 0 0.2em;
-    box-shadow: 0px 0px 0px 1px hsl(0, 0%, 80%);
     margin-right: 2px;
     margin-left: 2px;
     white-space: nowrap;
-    background: -moz-linear-gradient(top, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0.0) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsla(0, 0%, 0%, 0.1)), color-stop(100%, hsla(0, 0%, 0%, 0.0)));
-    background: -webkit-linear-gradient(top, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0.0) 100%);
-    background: -o-linear-gradient(top, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0.0) 100%);
-    background: -ms-linear-gradient(top, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0.0) 100%);
-    background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.1) 0%, hsla(0, 0%, 0%, 0.0) 100%);
     display: inline-block;
     margin-bottom: 1px;
+    border: 1px solid rgba(255, 255, 255, 1);
 }
 
 .user-mention-me {
-    background-color: hsl(112, 88%, 87%);
+    background-color: hsl(0, 0%, 100%);
 }
 
 .alert-word {
-    background-color: hsla(102, 85%, 57%, 0.5);
+    background-color: hsla(227, 85%, 57%, 0.5);
 }
 
 #organization h1,
@@ -2913,7 +2918,7 @@ div.topic_edit_spinner .loading_indicator_spinner {
 
 .email_copied,
 .user_popover_email i:hover {
-    color: hsl(170, 48%, 54%);
+    color: hsl(236, 48%, 54%);
 }
 
 .email_copied i {
@@ -2974,7 +2979,7 @@ div.message_content td.tictactoe {
 }
 
 div.message_content button.tictactoe-square {
-    background-color: hsl(156, 30%, 62%);
+    background-color: hsl(236, 30%, 62%);
     width: 40px;
     height: 40px;
     border: none;
@@ -2984,11 +2989,11 @@ div.message_content button.tictactoe-square {
 }
 
 div.message_content button.tictactoe-square:hover {
-    background-color: hsl(155, 5%, 53%);
+    background-color: hsl(236, 5%, 53%);
 }
 
 div.message_content button.tictactoe-square:disabled {
-    background-color: hsl(156, 33%, 81%);
+    background-color: hsl(236, 33%, 81%);
 }
 
 // Hide the up and down arrows in the Flatpickr datepicker year

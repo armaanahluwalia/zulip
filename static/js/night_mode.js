@@ -60,9 +60,6 @@ var object_to_css = function (object) {
     // this should ONLY be used if there is no obvious way to perform this action
     // by prefixing the selector with `body.night-mode`.
     var css_skeleton = {
-        "a:hover": {
-            color: "#65c0ed",
-        },
     };
 
     // create a stylesheet that can be appended to the <head>.

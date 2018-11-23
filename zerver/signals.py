@@ -97,7 +97,7 @@ def email_on_new_login(sender: Any, user: UserProfile, request: Any, **kwargs: A
         email_dict = {
             'template_prefix': 'zerver/emails/notify_new_login',
             'to_user_id': user.id,
-            'from_name': 'Zulip Account Security',
+            'from_name': 'Loop Zero Account Security',
             'from_address': FromAddress.NOREPLY,
             'context': context}
         queue_json_publish("email_senders", email_dict)

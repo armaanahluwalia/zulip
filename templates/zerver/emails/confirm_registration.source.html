@@ -1,15 +1,11 @@
 {% extends "zerver/emails/compiled/email_base_default.html" %}
 
-{% block illustration %}
-<img src="{{ email_images_base_uri }}/registration_confirmation.png"/>
-{% endblock %}
-
 {% block content %}
 <p>
     {{ _('Hello there.') }}
 </p>
 <p>
-    {{ _('You recently signed up for Zulip. Awesome!') }}
+    {{ _('You recently signed up for <a href="http://www.loopzero.in/" target="_blank">Loop Zero</a>. Awesome!') }}
 </p>
 <p>
     {{ _('To complete signup, please click here:') }}
@@ -24,6 +20,6 @@
 </p>
 <p>
     {{ _("Cheers,") }}<br />
-    {{ _("Team Zulip") }}
+    {{ _("Armaan from Loop Zero") }}
 </p>
 {% endblock %}

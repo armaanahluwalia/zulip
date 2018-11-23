@@ -83,7 +83,7 @@
 }
 
 .new-style .button.green {
-    background-color: hsl(150, 31%, 53%);
+    background-color: hsl(236, 31%, 53%);
 }
 
 .new-style .button.grey {
@@ -106,8 +106,8 @@
 }
 
 .new-style .button.sea-green {
-    color: hsl(156, 41%, 40%);
-    border-color: hsl(156, 28%, 70%);
+    color: hsl(236, 41%, 40%);
+    border-color: hsl(236, 28%, 70%);
 }
 
 .new-style .button.btn-warning {
@@ -134,12 +134,12 @@
 
 .new-style .button.sea-green:hover,
 .new-style .button.sea-green:focus {
-    border-color: hsl(156, 30%, 50%);
+    border-color: hsl(236, 30%, 50%);
 }
 
 .new-style .button.sea-green:active {
-    border-color: hsl(156, 30%, 40%);
-    color: hsl(156, 44%, 43%);
+    border-color: hsl(236, 30%, 40%);
+    color: hsl(236, 44%, 43%);
     background-color: hsl(154, 33%, 96%);
 }
 
@@ -174,8 +174,8 @@
 
 .new-style .button[disabled="disabled"]:hover {
     background-color: hsl(0, 0%, 93%);
-    color: hsl(156, 39%, 54%);
-    border-color: hsl(156, 39%, 77%);
+    color: hsl(236, 39%, 54%);
+    border-color: hsl(236, 39%, 77%);
 }
 
 /* -- tab switcher -- */

@@ -1,24 +1,53 @@
 {% extends "zerver/emails/compiled/email_base_default.html" %}
 
-{% block illustration %}
-<img src="{{ email_images_base_uri }}/invitation_reminder.png"/>
-{% endblock %}
-
 {% block content %}
 <p>{{ _("Hi again,") }}
 </p>
 <p>
-    {% trans %}This is a friendly reminder that {{ referrer_name }} (<a href="mailto:{{ referrer_email }}">{{ referrer_email }}</a>) wants you to join them on Zulip, a workplace chat tool that actually makes you more productive.{% endtrans %}
+        <span class="highlight">
+            This is a friendly reminder that <em>{{ referrer_name }}</em> (<a href="mailto:{{ referrer_email }}">{{ referrer_email }}</a>) wants you to join them on <br /><a href="{{ realm_uri }}/" target="_blank"><em>Loop Zero</em></a>, an invitation-only community for sharing information amongst the brightest minds in the country.
+        </span>
 </p>
 <p>
     {{ _("To get started, please click here:") }}
     <a class="button" href="{{ activate_url }}">{{ _("Complete registration") }}</a>
 </p>
+
+<h2>Why Another Platform?</h2>
+<p>In a world with <b>Facebook, Twitter, WhatsApp</b> and a host of others, you might be wondering
+    what this is all about. I believe we can connect the brightest minds in the country together
+    and positively affect each others work, thoughts and beliefs.
+</p>
+<p><b><span class="highlight"><em>Loop Zero</em> is a curated group of individuals who deeply understand the content they consume, create and share.</span></b></p>
+<p>This is a closed community meaning all members are by invitation only. We want to create a place where each piece of information shared
+    comes from someone who is <b>deeply invested in a field</b> who can filter out the noise in the vast amount of information out there.
+</p>
+    
+<h2>How do I Use It?</h2>
+<p>There are a couple of ways Loop Zero is useful:</p>
+<ul>
+    <li><b>As a passive reader:</b> You could use Loop Zero to be informed about a particular field of interest. For example: If "Internet of Things" is of particular interest to you all you have to do is 
+        <a href="{{ realm_uri }}#streams/all" target="_blank">subscribe to that stream!</a></li>
+    <li><b>Share Content:</b> To engage with the community and share content, all you have to do is <em>create a new topic of conversation.</em>
+            Each <em>Stream</em> has a number of recently discussed topics.
+             To create a new topic just click the <em>New Topic </em> button within a stream.
+        </li>
+    
+    </ul>
+<h2>Is there a mobile app?</h2>
 <p>
-    {% trans %}We're here for you at <a href="mailto:{{ support_email }}">{{ support_email }}</a> if you have any questions.{% endtrans %}
+    Absolutely! Loop Zero leverages a software called <b>Zulip.</b> To use Loop zero on your cellphone or desktop computer 
+    we suggest downloading the Zulip <a target="_blank" href="https://zulipchat.com/apps">desktop and mobile apps</a>.
+    <br/><br/>
+    To access your Loop Zero account from the apps, just enter this Organization URL when prompted:
+ </p>
+
+
+<p>
+        We're here for you at <a href="mailto:{{ support_email }}">{{ support_email }}</a> if you have any questions.
 </p>
 <p>
     {{ _("Cheers,") }}<br />
-    {{ _("The Zulip Team") }}
+    {{ _("Armaan from Loop Zero") }}
 </p>
 {% endblock %}

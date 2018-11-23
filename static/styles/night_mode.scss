@@ -117,8 +117,8 @@ on a dark background, and don't change the dark labels dark either. */
     #search_arrows .pill:focus,
     .pm_recipient .pill-container .pill:focus {
         color: hsl(0, 0%, 100%);
-        border: 1px solid hsla(176, 78%, 28%, 0.6);
-        background-color: hsla(176, 49%, 42%, 0.4);
+        border: 1px solid hsla(227, 78%, 28%, 0.6);
+        background-color: hsla(227, 49%, 42%, 0.4);
     }
 
     .new-style .button.no-style {
@@ -375,8 +375,8 @@ on a dark background, and don't change the dark labels dark either. */
 
     .alert.alert-success {
         color: inherit;
-        background-color: hsla(161, 60%, 46%, 0.20);
-        border-color: hsl(165, 68%, 37%);
+        background-color: hsla(227, 60%, 46%, 0.20);
+        border-color: hsl(236, 68%, 37%);
     }
 
     .alert.alert-error,
@@ -475,8 +475,8 @@ on a dark background, and don't change the dark labels dark either. */
     }
 
     .highlight_text_inserted {
-        color: hsl(122, 100%, 81%);
-        background-color: hsla(120, 64%, 95%, 0.3);
+        color: hsl(236, 100%, 81%);
+        background-color: hsla(227, 64%, 95%, 0.3);
     }
 
     .highlight_text_deleted {
@@ -493,11 +493,11 @@ on a dark background, and don't change the dark labels dark either. */
 
     .star:not(.empty-star),
     .empty-star:hover {
-        color: hsla(126, 66%, 72%, 0.75);
+        color: hsla(227, 66%, 72%, 0.75);
     }
 
     #out-of-view-notification {
-        border: 1px solid 1px solid hsl(144, 45%, 62%);
+        border: 1px solid 1px solid hsl(236, 45%, 62%);
     }
 
     .email_tooltip {

@@ -98,7 +98,7 @@ body {
 }
 
 .code-section ul.nav li.active {
-    color: hsl(176, 46%, 41%);
+    color: hsl(236, 46%, 41%);
 }
 
 .code-section .blocks {
@@ -141,7 +141,7 @@ body {
     border-right: 1px solid hsl(219, 10%, 97%);
     overflow: auto;
 
-    background-color: hsl(153, 32%, 55%);
+    background-color: hsl(228, 15%, 46%);
     color: hsl(0, 0%, 100%);
 
     -webkit-overflow-scrolling: touch;
@@ -241,7 +241,7 @@ body {
 }
 
 .help .sidebar a.highlighted {
-    background-color: hsl(152, 40%, 42%);
+    background-color: hsl(236, 40%, 42%);
 
     /* Extend highlight to entire width of sidebar, not just link area */
     /* This has been changed from "+" to "- -" because of issue #8403.
@@ -309,7 +309,7 @@ body {
     vertical-align: top;
     padding: 3px 6.5px 3px 7.5px;
     margin-right: 5px;
-    background-color: hsl(170, 48%, 54%);
+    background-color: hsl(236, 48%, 54%);
     color: hsl(0, 0%, 100%);
     border-radius: 100%;
     font-size: 0.9em;
@@ -653,6 +653,9 @@ input.text-error {
     text-decoration: none;
     position: relative;
     line-height: 0.8;
+    img {
+        width: 140px;
+    }
 }
 
 .header-main .logo .light {
@@ -743,7 +746,7 @@ input.text-error {
 }
 
 .portico-header .dropdown ul li:hover {
-    background: linear-gradient(to bottom, hsl(163, 92%, 39%), hsl(200, 100%, 35%));
+    background: linear-gradient(to bottom, hsl(236, 92%, 39%), hsl(200, 100%, 35%));
     transition: none;
 }
 
@@ -1204,9 +1207,9 @@ input#terminal:checked ~ #tab-terminal {
 
 .btn-user {
     background-color: hsl(0, 0%, 100%);
-    border-color: hsl(169, 44%, 54%);
+    border-color: hsl(236, 44%, 54%);
     border-style: solid;
-    color: hsl(170, 40%, 41%);
+    color: hsl(236, 40%, 41%);
 }
 
 .btn-admin {
@@ -1400,7 +1403,7 @@ input.new-organization-button {
 .top-links a:hover {
     text-decoration: none;
     background-color: hsla(0, 0%, 100%, 1.0);
-    color: hsl(170, 50%, 40%);
+    color: hsl(236, 50%, 40%);
 }
 
 .centered-button {
@@ -1554,7 +1557,7 @@ input.new-organization-button {
 }
 
 .markdown a {
-    color: hsl(176, 46%, 41%);
+    color: hsl(236, 46%, 41%);
     font-weight: 600;
 }
 
@@ -1759,7 +1762,6 @@ input.new-organization-button {
 .error_page {
     padding: 20px 0px;
     min-height: calc(100vh - 290px);
-    background-color: hsl(163, 42%, 85%);
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 }
 
@@ -1777,10 +1779,10 @@ input.new-organization-button {
 
 .error_page .errorbox {
     margin: auto;
-    border: 2px solid hsl(163, 43%, 46%);
+    border: 2px solid hsl(236, 43%, 46%);
     max-width: 500px;
     background-color: hsl(0, 0%, 100%);
-    box-shadow: 0 0 4px hsl(163, 43%, 46%);
+    box-shadow: 0 0 4px hsl(236, 43%, 46%);
     font-size: 18px;
 }
 
@@ -1798,7 +1800,7 @@ input.new-organization-button {
 }
 
 .error_page .lead {
-    color: hsl(163, 49%, 44%);
+    color: hsl(236, 49%, 44%);
     font-size: 35px;
     margin-bottom: 20px;
     line-height: normal;
@@ -2131,7 +2133,7 @@ input.new-organization-button {
 }
 
 .button-new.sea-green {
-    background-color: hsl(177, 70%, 46%);
+    background-color: hsl(236, 70%, 46%);
     color: hsl(0, 0%, 100%);
 }
 

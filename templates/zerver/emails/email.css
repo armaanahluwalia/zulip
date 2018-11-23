@@ -6,7 +6,7 @@ img {
 }
 
 body {
-    background-color: hsl(165, 25%, 97%);
+    background-color: #f5f6f9;
     font-family: sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
@@ -26,12 +26,11 @@ table {
 
 table td {
     font-family: sans-serif;
-    font-size: 14px;
     vertical-align: top;
 }
 
 .body {
-    background-color: hsl(165, 25%, 97%);
+    background-color: #f5f6f9;
     width: 100%;
 }
 
@@ -58,7 +57,9 @@ table td {
 
 .wrapper {
     box-sizing: border-box;
-    padding: 0px 20px 20px 20px;
+    padding: 40px;
+    border: 5px solid #ccc9de;
+    border-radius: 10px;
 }
 
 .footer {
@@ -86,14 +87,31 @@ h1,
 h2,
 h3,
 h4 {
-    color: hsl(0, 0%, 0%);
     font-family: sans-serif;
-    font-weight: 400;
     line-height: 1.4;
-    margin: 0;
-    margin-bottom: 30px;
+    font-weight: 600;
+    color: #535d8d;
+    font-size: 26px;
+    margin: 30px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #1b66ff;
+    display: inline-block;
 }
-
+b {
+    color: #5a576b;
+}
+em {
+    font-weight: bold;
+    color: #1060ff;
+    font-style: normal;
+}
+.highlight {
+    color: #445a86;
+    font-size: 18px;
+}
+strong {
+    font-weight: bold;
+}
 h1 {
     font-size: 35px;
     font-weight: 300;
@@ -103,13 +121,20 @@ h1 {
 
 p,
 ul,
-ol {
+ol,
+li {
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.6em !important;
     font-weight: normal;
+    font-weight: 100;
     margin: 10px 0px;
 }
-
+p, 
+ul, 
+ol {
+    margin: 20px 0;
+}
 p li,
 ul li,
 ol li {
@@ -118,12 +143,13 @@ ol li {
 }
 
 a {
-    color: hsl(164, 42%, 47%);
+    color: #525c90;
     text-decoration: underline;
+    font-weight: bold;
 }
 
 a:hover {
-    color: hsl(164, 51%, 55%);
+    color: #525c90;
 }
 
 .important {
@@ -135,16 +161,17 @@ a:hover {
     padding: 10px 0px;
     margin: 20px auto;
     width: 200px;
-    border: 1px solid hsl(163, 47%, 66%);
-    background-color: hsl(163, 47%, 66%);
+    background-color: hsl(236, 62%, 61%);
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bold;
     outline: none;
     color: hsl(0, 0%, 100%);
     font-family: sans-serif;
     text-decoration: none;
     text-align: center;
     text-shadow: none;
+    text-transform: capitalize;
 }
 
 a.button:hover {
@@ -169,7 +196,19 @@ a.button:hover {
     pointer-events: none;
     cursor: default !important;
     z-index: 100;
+    text-align: center;
 }
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    margin: auto;
+    width: 150px;
+}
+
 
 @media only screen and (max-width: 620px) {
     table[class=body] h1 {

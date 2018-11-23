@@ -1,6 +1,6 @@
 Hi,
 
-This is a notification that a new login to your Zulip account has just occurred.
+This is a notification that a new login to your Loop Zero account has just occurred.
 
 Login details:
 Server: {{ realm_uri }}
@@ -17,4 +17,4 @@ or contact us immediately at {{ support_email }}.
 If you recognize this login activity, you can archive this notice.
 
 Thanks,
-Zulip Account Security
+Loop Zero Account Security

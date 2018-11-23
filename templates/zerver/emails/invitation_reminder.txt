@@ -5,7 +5,28 @@
 {{ _("To get started, visit the link below:") }}
     <{{ activate_url }}>
 
+
+Why Another Platform?
+=====================
+In a world with Facebook, Twitter, WhatsApp and a host of others, you might be wondering what this is all about. I believe we can connect the brightest minds in the country together and positively affect each others work, thoughts and beliefs.
+
+Loop Zero is a curated group of the individuals who deeply understand the content they consume, create and share.
+
+This is a closed community meaning all members are by invitation only. We want to create a place where each piece of information shared comes from someone who is deeply invested in a field who can filter out the noise in the vast amount of information out there.
+
+How do I Use It?
+================
+There are a couple of ways Loop Zero is useful to its members:
+
+As a passive reader: You could use Loop Zero to be informed about a particular field of interest. For example: If "Internet of Things" is of particular interest to you all you have to do is subscribe to that stream!
+Share Content: To engage with the community and share content, all you have to do is create a new topic of conversation. Each Stream has a number of recently discussed topics. To create a new topic just click the New Topic button within a stream.
+
+Is there a mobile app?
+======================
+Absolutely! Loop Zero leverages a software called Zulip. To use Loop zero on your cellphone or desktop computer we suggest downloading the Zulip desktop and mobile apps at https://zulipchat.com/apps.
+
+
 {% trans %}We're here for you at <{{ support_email }}> if you have any questions.{% endtrans %}
 
 {{ _("Cheers,") }}
-{{ _("The Zulip Team") }}
+{{ _("Armaan from Loop Zero") }}

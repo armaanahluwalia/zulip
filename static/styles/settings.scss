@@ -385,14 +385,14 @@ input[type=checkbox] + .inline-block {
 }
 
 #settings_page .icon-button.primary:hover {
-    background-color: hsl(166, 35%, 57%);
-    border: 1px solid hsl(166, 35%, 57%);
+    background-color: hsl(236, 35%, 57%);
+    border: 1px solid hsl(236, 35%, 57%);
 }
 
 #settings_page .icon-button.primary {
-    background-color: hsl(156, 30%, 50%);
+    background-color: hsl(236, 30%, 50%);
     color: hsl(0, 0%, 100%);
-    border: 1px solid hsl(155, 30%, 50%);
+    border: 1px solid hsl(236, 30%, 50%);
 }
 
 #settings_page .icon-button .icon-button-icon {
@@ -422,8 +422,8 @@ input[type=checkbox] + .inline-block {
 }
 
 #settings_page .icon-button.save-button.saving {
-    background-color: hsl(156, 14%, 40%);
-    border-color: hsl(156, 14%, 40%);
+    background-color: hsl(236, 14%, 40%);
+    border-color: hsl(236, 14%, 40%);
 }
 
 #settings_page .save-button.saving .icon-button-icon {
@@ -563,8 +563,8 @@ input[type=checkbox].inline-block {
     border-radius: 4px;
     margin-top: 14px;
     margin-left: 10px;
-    border: 1px solid hsl(156, 30%, 50%);
-    color: hsl(156, 30%, 50%);
+    border: 1px solid hsl(236, 30%, 50%);
+    color: hsl(236, 30%, 50%);
     padding: 3px 10px;
     font-size: 15px;
 }
@@ -582,7 +582,7 @@ input[type=checkbox].inline-block {
 
 /* make the spinner green like the text and box. */
 #settings_page .alert-notification .loading_indicator_spinner svg path {
-    fill: hsl(178, 100%, 40%);
+    fill: hsl(236, 100%, 40%);
 }
 
 #settings_page .alert-notification .loading_indicator_text {
@@ -793,7 +793,7 @@ input[type=checkbox].inline-block {
 }
 
 .bots_list .edit-bot-buttons .sea-green {
-    color: hsl(177, 70%, 46%);
+    color: hsl(236, 70%, 46%);
 }
 
 .bots_list .edit-bot-buttons .blue {

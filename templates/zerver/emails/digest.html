@@ -3,7 +3,7 @@
 {% block content %}
     Hello {{ name }},
 
-    <p>A lot has happened on Zulip while you've been away! <a href="{{ realm_uri }}">Visit Zulip</a> to catch up.</p>
+    <p>A lot has happened on Loop Zero while you've been away! <a href="{{ realm_uri }}">Visit Loop Zero</a> to catch up.</p>
 
     {% if unread_pms %}
     <h2>Missed private messages</h2>
@@ -82,15 +82,15 @@
     {% endif %}
 
     {% if new_users %}
-    <p>{% if new_streams.html or unread_pms or hot_conversations %}And finally, please{% else %}Please{% endif %} welcome {{ new_users|display_list(4) }} to Zulip!</p>
+    <p>{% if new_streams.html or unread_pms or hot_conversations %}And finally, please{% else %}Please{% endif %} welcome {{ new_users|display_list(4) }} to Loop Zero!</p>
     {% endif %}
 
     <br />
 
-    <p><a href="{{ realm_uri }}">Click here to log in to Zulip and catch up.</a></p>
+    <p><a href="{{ realm_uri }}">Click here to log in to Loop Zero and catch up.</a></p>
 
     <p>Cheers,<br />
-    The Zulip Team</p>
+    The Loop Zero Team</p>
 {% endblock %}
 
 {% block manage_preferences %}

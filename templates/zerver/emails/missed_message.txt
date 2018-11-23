@@ -13,7 +13,7 @@ While you were away you received {{ message_count }} new{% if group_pm %} group 
 {% endfor %}
 {% endif %}
 
-Click here to log in to Zulip and view your new messages:
+Click here to log in to Loop Zero and view your new messages:
 
 {{ realm_uri }}
 
@@ -21,11 +21,11 @@ Click here to log in to Zulip and view your new messages:
 Or just reply to this email.
 {% endif %}
 {% if reply_warning %}
-Please do not reply to this automated message. To respond to the missed messages you have received, please log on to Zulip and send your replies there.
+Please do not reply to this automated message. To respond to the missed messages you have received, please log on to Loop Zero and send your replies there.
 {% endif %}
 
 Cheers,
-The Zulip Team
+The Loop Zero Team
 
 Manage email preferences:
 

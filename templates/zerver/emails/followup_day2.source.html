@@ -1,26 +1,30 @@
 {% extends "zerver/emails/compiled/email_base_default.html" %}
 
-{% block illustration %}
-<img src="{{ email_images_base_uri }}/day2_1.png"/>
-{% endblock %}
-
 {% block content %}
 <p>Hey,</p>
 
-<p>I wanted to share one last thing with you: a few tips about topics, since mastering topics is a key part of being a Zulip power user.</p>
+<p><span class="highlight"><strong>I wanted to share one last thing with you: a few small tips for using <a href="{{ realm_uri }}/" target="_blank"><em>Loop Zero</em></a> like a pro.</strong></span></p>
 
-<img src="{{ email_images_base_uri }}/day2_2.png"/>
-
-<p>Topics are like email subject lines. The big difference, though, is that they're really short and lightweight. Two or three words will do it. Don't overthink 'em&mdash;you can always edit the message later!</p>
-
-<ul>
-    <li>Good topics: design mockup, Bug 345, acme burgers</li>
-    <li>Not recommended: "What do people think of this new design mockup?", "I'm looking at Bug 345", "Is Acme Burgers open for lunch?"</li>
-</ul>
-
-<img src="{{ email_images_base_uri }}/day2_3.png"/>
-
-<p>Why bother with topics? Well, two reasons: it makes conversations clearer (imagine if email didn't have them!), and it lets you more efficiently catch up on what's happened while you're away&mdash;read the topics that are relevant to you, and ignore the ones that aren't!</p>
+<h2>Subscribe to streams</h2>
+<p>The first thing I'll have you do is go through the list of available streams.
+    These are fields that you are well versed in and want to be up to date with on a daily basis.
+    <a href="{{ realm_uri }}/#streams" target="_blank"><strong>Click here</strong></a> for a <em>full list of streams</em> on the web app.
+    To subscribe to a stream, click it and press the <em>Subscribe</em> button.
+</p>
+<h2>Discuss topics of interest</h2>
+<p>Loop Zero is a fully capable tool for communicating including <b>emoji, pictures, links, attachments and more</b>.
+    You will find people posting interesting content across a range of topics and streams. If you have something intelligent to say,
+    do not hesitate for a second to <b>add your thoughts</b>. Thats what the platform is for!
+</p>
+<h2>Share links that wow you</h2>
+<p>The platform is predicated on the idea that if everyone in the community shares <b>something that excites them</b> in an area they have expertise in, 
+    the community will be a lot smarter as a whole. 
+</p>
+<p>
+    <b>Share that article</b> when you're done reading, and you think <em>"wow, people should know about this"</em>.
+    To share a link, just click the "New Topic" button in a stream of relevance, give the topic a relevant name and paste in the link in the message box.
+    Hopefully, someone else finds it interesting too!
+</p>
 
 <p><a href="{{ realm_uri }}">Take it for a spin now.</a></p>
 

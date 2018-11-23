@@ -1,12 +1,12 @@
 {% trans %}Hi {{ full_name }},{% endtrans %}
 
-{% trans %}You can log in to your Zulip organization, {{ realm_name }},
-at the following link:{% endtrans %}
+{% trans %}You can log in to your account at {{ realm_name }},
+by using the following link:{% endtrans %}
     {{ realm_uri }}
 
 {% trans %}The email address associated with your account is {{ email }}.{% endtrans %}
 
-{% trans %}If you have trouble logging in, please contact Zulip support by replying to
+{% trans %}If you have trouble logging in, please contact Loop Zero support by replying to
 this email.{% endtrans %}
 
-{{ _("Thanks for using Zulip!") }}
+{{ _("Thanks for using Loop Zero!") }}

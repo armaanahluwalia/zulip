@@ -1,28 +1,22 @@
 {% extends "zerver/emails/compiled/email_base_default.html" %}
 
-{% block illustration %}
-<img src="{{ email_images_base_uri }}/email_logo.png"/>
-{% endblock %}
-
 {% block content %}
-<p>{% trans %}Hi {{ full_name }},{% endtrans %}</p>
+<p>Hi {{ full_name }},</p>
 
 
-<p>{% trans %}You can log in to your Zulip organization, {{ realm_name }},
-at the following link:{% endtrans %}</p>
+<p>You can log in to your {{ realm_name }} account at the following link:</p>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
         <td align="center">
-            <a href="{{ realm_uri }}">{{ realm_uri }}</a>
+            <a href="{{ realm_uri }}" target="_blank">{{ realm_uri }}</a>
         </td>
     </tr>
 </table>
 
-<p>{% trans %}The email address associated with your account is {{ email }}.{% endtrans %}</p>
+<p>The email address associated with your account is <em>{{ email }}</em>.</p>
 
-<p>{% trans %}If you have trouble logging in, please contact Zulip support by replying to
-this email.{% endtrans %}</p>
+<p>If you have trouble logging in, please contact Loop Zero support by replying to this email.</p>
 
-<p>{{ _("Thanks for using Zulip!") }}</p>
+<p>{{ _("Thanks for being a part of Loop Zero!") }}</p>
 {% endblock %}

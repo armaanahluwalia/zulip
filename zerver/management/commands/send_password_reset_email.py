@@ -49,4 +49,4 @@ class Command(ZulipBaseCommand):
             }
             send_email('zerver/emails/password_reset', to_user_id=user_profile.id,
                        from_address=FromAddress.tokenized_no_reply_address(),
-                       from_name="Zulip Account Security", context=context)
+                       from_name="Loop Zero Account Security", context=context)

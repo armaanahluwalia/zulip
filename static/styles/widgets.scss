@@ -9,7 +9,7 @@
 
 .widget-choices button {
     font-weight: 700;
-    color: hsl(240, 100%, 50%);
+    color: hsl(236, 100%, 50%);
 }
 
 .widget-choices-heading {
@@ -36,7 +36,7 @@
 
 .poll-widget .poll-names .todo-widget {
     font-size: 14px;
-    color: hsl(120, 100%, 25%);
+    color: hsl(236, 100%, 25%);
 }
 
 .poll-widget .poll-option {
@@ -44,8 +44,8 @@
 }
 
 .poll-vote {
-    color: hsl(156, 41%, 40%);
-    border-color: hsl(156, 28%, 70%);
+    color: hsl(236, 41%, 40%);
+    border-color: hsl(236, 28%, 70%);
     margin-right: 4px;
     background-color: hsl(0, 0%, 100%);
 }
@@ -54,17 +54,17 @@ button.task {
     height: 20px;
     width: 20px;
     background-color: transparent;
-    border-color: hsl(156, 28%, 70%);
+    border-color: hsl(236, 28%, 70%);
     margin-right: 4px;
     border-radius: 3px;
 }
 
 button.task:hover {
-    border: 1px solid hsl(194, 60%, 40%);
+    border: 1px solid hsl(236, 60%, 40%);
 }
 
 button.task-completed {
-    border-color: hsl(157, 18%, 77%);
+    border-color: hsl(236, 18%, 77%);
     padding: 0px;
 }
 
@@ -73,7 +73,7 @@ img.task-completed {
 }
 
 .poll-vote:hover {
-    border-color: hsl(156, 30%, 50%);
+    border-color: hsl(236, 30%, 50%);
 }
 
 input.add-task,

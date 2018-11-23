@@ -38,24 +38,42 @@ def create_if_missing_realm_internal_bots() -> None:
             setup_realm_internal_bots(realm)
 
 def send_initial_pms(user: UserProfile) -> None:
-    organization_setup_text = ""
-    if user.is_realm_admin:
-        help_url = user.realm.uri + "/help/getting-your-organization-started-with-zulip"
-        organization_setup_text = ("* [Read the guide](%s) for getting your organization "
-                                   "started with Zulip\n" % (help_url,))
-
     content = (
-        "Hello, and welcome to Zulip!\n\nThis is a private message from me, Welcome Bot. "
-        "Here are some tips to get you started:\n"
-        "* Download our [Desktop and mobile apps](/apps)\n"
-        "* Customize your account and notifications on your [Settings page](#settings)\n"
-        "* Type `?` to check out Zulip's keyboard shortcuts\n"
-        "%s"
-        "\n"
-        "The most important shortcut is `r` to reply.\n\n"
-        "Practice sending a few messages by replying to this conversation. If you're not into "
-        "keyboards, that's okay too; clicking anywhere on this message will also do the trick!") \
-        % (organization_setup_text,)
+        """
+Hi There!
+
+First things first, welcome!
+I wanted to share a few small tips with you for using Loop Zero like a pro.
+___
+**Subscribe to streams**
+___
+The first thing I'll have you do is go through the list of available streams.
+These are fields that you are well versed in and want to be up to date with on a daily basis.
+[Click here](/#streams/all) for a full list of streams on the web app.
+To subscribe to a stream, click it and press the **Subscribe** button.
+
+___
+**Discuss topics of interest**
+___
+Loop Zero is a fully capable tool for communicating including emoji, pictures, links, attachments and more.
+You will find people posting interesting content across a range of topics and streams.
+If you have something intelligent to say, **do not hesitate for a second to add your thoughts**.
+Thats what the platform is for!
+
+___
+**Share links that wow you**
+___
+The platform is predicated on the idea that if everyone in the community shares something that excites them
+in an area they have expertise in, the community will be a lot smarter as a whole.
+
+Share that article when you're done reading, and you think **"wow, people should know about this"**.
+To share a link, just click the *New Topic* button in a stream of relevance, give the topic a relevant name
+and paste in the link in the message box. Hopefully, someone else finds it interesting too!
+___
+**Go on then. Get started!**
+___
+        """
+    )
 
     internal_send_private_message(user.realm, get_system_bot(settings.WELCOME_BOT),
                                   user, content)

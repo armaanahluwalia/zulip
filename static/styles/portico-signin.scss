@@ -489,13 +489,13 @@ html {
 }
 
 .login-page-container input[type=submit].btn-admin {
-    border-color: hsl(170, 41%, 52%);
-    color: hsl(170, 41%, 52%);
+    border-color: hsl(236, 41%, 52%);
+    color: hsl(236, 41%, 52%);
 }
 
 .login-page-container input[type=submit].btn-admin:hover {
-    color: hsl(156, 62%, 61%);
-    border-color: hsl(156, 62%, 61%);
+    color: hsl(236, 62%, 61%);
+    border-color: hsl(236, 62%, 61%);
 }
 
 .split-view .org-header {
@@ -644,7 +644,7 @@ button.login-google-button {
 
 .split-view .actions a,
 .back-to-login {
-    color: hsl(164, 100%, 23%);
+    color: hsl(236, 100%, 23%);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.8em;
@@ -657,7 +657,7 @@ button.login-google-button {
 .split-view .actions a:hover,
 .back-to-login:hover {
     text-decoration: none;
-    color: hsl(156, 62%, 61%);
+    color: hsl(236, 62%, 61%);
 }
 
 #registration {

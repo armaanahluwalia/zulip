@@ -104,7 +104,7 @@ class EmailChangeTestCase(ZulipTestCase):
         body = email_message.body
         from_email = email_message.from_email
         self.assertIn('We received a request to change the email', body)
-        self.assertIn('Zulip Account Security', from_email)
+        self.assertIn('Loop Zero Account Security', from_email)
         tokenized_no_reply_email = parseaddr(email_message.from_email)[1]
         self.assertTrue(re.search(self.TOKENIZED_NOREPLY_REGEX, tokenized_no_reply_email))
 

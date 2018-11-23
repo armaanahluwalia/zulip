@@ -1,6 +1,6 @@
 Hello {{ name }},
 
-A lot has happened on Zulip while you've been away! Visit
+A lot has happened on Loop Zero while you've been away! Visit
 {{ realm_uri }} to catch up.
 
 {% if unread_pms %}
@@ -40,12 +40,12 @@ Catch up on the rest of these conversations: {{ realm_uri }}.{% endif %}
 
 Visit your Streams page to subscribe: {{ realm_uri }}/#streams.{% endif %}
 
-{% if new_users %}{% if new_streams.plain or unread_pms or hot_conversations %}And finally, please{% else %}Please{% endif %} welcome {{ new_users|display_list(4) }} to Zulip!{% endif %}
+{% if new_users %}{% if new_streams.plain or unread_pms or hot_conversations %}And finally, please{% else %}Please{% endif %} welcome {{ new_users|display_list(4) }} to Loop Zero!{% endif %}
 
-Click here to log in to Zulip and catch up: {{ realm_uri }}.
+Click here to log in to Loop Zero and catch up: {{ realm_uri }}.
 
 Cheers,
-The Zulip Team
+The Loop Zero Team
 
 --
 Manage email preferences:

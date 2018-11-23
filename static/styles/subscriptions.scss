@@ -809,8 +809,8 @@ form#add_new_subscription {
 }
 
 #subscription_overlay .stream-header .subscribe-button.unsubscribed {
-    color: hsl(156, 39%, 54%);
-    border-color: hsl(156, 39%, 77%);
+    color: hsl(236, 39%, 54%);
+    border-color: hsl(236, 39%, 77%);
 }
 
 #subscription_overlay .stream-header .subscribe-button.unsubscribed:active {
@@ -847,7 +847,7 @@ form#add_new_subscription {
 
 .editable-section[contenteditable=true] {
     display: inline-block;
-    color: hsl(170, 48%, 54%);
+    color: hsl(236, 48%, 54%);
 }
 
 .editable-section[contenteditable=true]:focus {

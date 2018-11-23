@@ -1,62 +1,43 @@
 {% extends "zerver/emails/compiled/email_base_default.html" %}
 
-{% block illustration %}
-<img src="{{ email_images_base_uri }}/email_logo.png"/>
-{% endblock %}
-
 {% block content %}
-<p>{{ _('Welcome to Zulip!') }}</p>
+<p>{{ _('Hello there : )') }}</p>
 
-<p>
-    {% if realm_creation %}
-        {% trans %}
-        You've created the new Zulip organization <b>{{ realm_name }}</b>.
-        {% endtrans %}
-    {% else %}
-        {% trans %}
-        You've joined the Zulip organization <b>{{ realm_name }}</b>.
-        {% endtrans %}
-    {% endif %}
+<p>{{ _('Thank you for accepting your invititation to ') }}<a href="{{ realm_uri }}" target="_blank"><b><em>Loop Zero</em></b></a></p>
+<h2>Why Another Platform?</h2>
+<p>In a world with <b>Facebook, Twitter, WhatsApp</b> and a host of others, you might be wondering
+    what this is all about. I believe we can connect the brightest minds in the country together
+    and positively affect each others work, thoughts and beliefs.
+</p>
+<p><b><span class="highlight"><em>Loop Zero</em> is a curated group of individuals who deeply understand the content they consume, create and share.</span></b></p>
+<p>This is a closed community meaning all members are by invitation only. We want to create a place where each piece of information shared
+    comes from someone who is <b>deeply invested in a field</b> who can filter out the noise in the vast amount of information out there.
 </p>
 
+<h2>How do I Use It?</h2>
+<p>There are a couple of ways Loop Zero is useful:</p>
+<ul>
+    <li><b>As a passive reader:</b> You could use Loop Zero to be informed about a particular field of interest. For example: If "Internet of Things" is of particular interest to you all you have to do is 
+        <a href="{{ realm_uri }}#streams/all" target="_blank">subscribe to that stream!</a></li>
+    <li><b>Share Content:</b> To engage with the community and share content, all you have to do is <em>create a new topic of conversation.</em>
+            Each <em>Stream</em> has a number of recently discussed topics.
+             To create a new topic just click the <em>New Topic </em> button within a stream.
+        </li>
+    
+    </ul>
+<h2>Is there a mobile app?</h2>
 <p>
-    {{ _('Your account details:') }}
-    <li>{{ _('Organization URL:') }} {{ realm_uri }}<br/></li>
-    {% if ldap_username %}
-    <li>{{ _('Use your LDAP account to login') }}<br/></li>
-    {% else %}
-    <li>{{ _('Email:') }} {{ email }}<br/></li>
-    {% endif %}
-    {% trans %}
-    (you'll need these to sign in to the <a href="https://zulipchat.com/apps">mobile and desktop</a> apps)
-    {% endtrans %}
-</p>
+    Absolutely! Loop Zero leverages a software called <b>Zulip.</b> To use Loop zero on your cellphone or desktop computer 
+    we suggest downloading the Zulip <a target="_blank" href="https://zulipchat.com/apps">desktop and mobile apps</a>.
+    <br/><br/>
+    To access your Loop Zero account from the apps, just enter this Organization URL when prompted:
+ </p>
 
 <p>
-    {% if is_realm_admin %}
-        {% trans %}
-        Check out our <a href="{{ getting_started_link }}">guide for admins</a>, become a Zulip pro with a
-        few <a href="{{ keyboard_shortcuts_link }}">keyboard shortcuts</a>, or <a href="{{ realm_uri }}">dive right in</a>!
-        {% endtrans %}
-    {% else %}
-        {% trans %}
-        <a href="{{ getting_started_link }}">Learn more</a> about Zulip, become a pro with a few
-        <a href="{{ keyboard_shortcuts_link }}">keyboard shortcuts</a>, or <a href="{{ realm_uri }}">dive right in</a>!
-        {% endtrans %}
-    {% endif %}
+    <b>{{ realm_uri }}</b>
 </p>
-
 <p>
     {{ _("Cheers,") }}<br />
-    {{ _("Team Zulip") }}
-</p>
-
-<p>
-    {% trans %}
-    PS: Follow us on <a href="https://twitter.com/zulip">Twitter</a>,
-    star us on <a href="https://github.com/zulip/zulip">GitHub</a>, or
-    chat with us live on the
-    <a href="https://chat.zulip.org">Zulip community server</a>!
-    {% endtrans %}
+    {{ _("Armaan from Loop Zero") }}
 </p>
 {% endblock %}

@@ -12,7 +12,7 @@
     border-radius: 50%;
     position: absolute;
     background-color: hsla(196, 100%, 82%, 0.3);
-    border: 2px solid hsl(215, 47%, 50%);
+    border: 2px solid hsl(236, 100%, 64%);
     top: 50%;
     left: 50%;
 }
@@ -54,7 +54,7 @@
     left: -5px;
     bottom: 3px;
     transform: rotate(7deg);
-    color: hsl(215, 47%, 50%);
+    color: hsl(236, 100%, 64%);
     font-size: 2.75em;
     font-weight: 600;
 }
@@ -91,7 +91,7 @@
     padding: 0 15px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    background-color: hsl(164, 44%, 47%);
+    background-color: hsl(236, 44%, 47%);
 }
 
 .hotspot.overlay .hotspot-title {
@@ -134,7 +134,7 @@
     font-size: 1.15em;
     font-weight: 600;
     color: hsl(0, 0%, 100%);
-    background-color: hsl(164, 44%, 47%);
+    background-color: hsl(236, 44%, 47%);
     border-radius: 4px;
     white-space: normal;
     padding: 7px 20px;
@@ -142,7 +142,7 @@
 }
 
 .hotspot-confirm:hover {
-    background-color: hsl(164, 44%, 56%);
+    background-color: hsl(236, 44%, 56%);
 }
 
 .hotspot.overlay .hotspot-confirm {
@@ -181,7 +181,7 @@
 }
 
 .hotspot-popover.arrow-top::after {
-    border-bottom-color: hsl(164, 44%, 47%);
+    border-bottom-color: hsl(236, 44%, 47%);
     margin-right: -12px;
 }
 
@@ -255,7 +255,7 @@
 }
 
 .hotspot-inline-top .hotspot-title {
-    background-color: hsl(168, 100%, 35%);
+    background-color: hsl(236, 62%, 61%);
     margin: 0;
     color: hsl(0, 0%, 100%);
     font-weight: 600;

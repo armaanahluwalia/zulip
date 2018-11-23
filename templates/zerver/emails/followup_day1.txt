@@ -1,43 +1,27 @@
-{{ _('Welcome to Zulip!') }}
+Hello there : )
 
-{% if realm_creation %}
-{% trans %}
-You've created the new Zulip organization {{ realm_name }}.
-{% endtrans %}
-{% else %}
-{% trans %}
-You've joined the Zulip organization {{ realm_name }}.
-{% endtrans %}
-{% endif %}
+Thank you for accepting your invititation to Loop Zero
 
-{{ _('Your account details:') }}
-* {{ _('Organization URL:') }} {{ realm_uri }}
-{% if ldap_username %}
-* {{ _('LDAP username:') }} {{ ldap_username }}
-{% else %}
-* {{ _('Email:') }} {{ email }}
-{% endif %}
-{% trans %}
-(you'll need these to sign in to the mobile and desktop apps (https://zulipchat.com/apps))
-{% endtrans %}
+Why Another Platform?
+=====================
+In a world with Facebook, Twitter, WhatsApp and a host of others, you might be wondering what this is all about. I believe we can connect the brightest minds in the country together and positively affect each others work, thoughts and beliefs.
 
-{% if is_realm_admin %}
-{% trans %}
-Check out our guide ({{ getting_started_link }}) for admins, become a Zulip pro with a
-few keyboard shortcuts ({{ keyboard_shortcuts_link }}), or dive right in to {{ realm_uri }}!
-{% endtrans %}
-{% else %}
-{% trans %}
-Learn more ({{ getting_started_link }}) about Zulip, become a pro with a few keyboard
-shortcuts ({{ keyboard_shortcuts_link }}), or dive right in to {{ realm_uri }}!
-{% endtrans %}
-{% endif %}
+Loop Zero is a curated group of the individuals who deeply understand the content they consume, create and share.
 
-{{ _("Cheers,") }}
-{{ _("Team Zulip") }}
+This is a closed community meaning all members are by invitation only. We want to create a place where each piece of information shared comes from someone who is deeply invested in a field who can filter out the noise in the vast amount of information out there.
 
-{% trans %}
-PS: Check us out on Twitter (@zulip), star us on GitHub
-(https://github.com/zulip/zulip), or chat with us live on the
-Zulip community server (https://chat.zulip.org)!
-{% endtrans %}
+How do I Use It?
+================
+There are a couple of ways Loop Zero is useful to its members:
+
+As a passive reader: You could use Loop Zero to be informed about a particular field of interest. For example: If "Internet of Things" is of particular interest to you all you have to do is subscribe to that stream!
+Share Content: To engage with the community and share content, all you have to do is create a new topic of conversation. Each Stream has a number of recently discussed topics. To create a new topic just click the New Topic button within a stream.
+
+Is there a mobile app?
+======================
+Absolutely! Loop Zero leverages a software called Zulip. To use Loop zero on your cellphone or desktop computer we suggest downloading the Zulip desktop and mobile apps at https://zulipchat.com/apps.
+
+{{ realm_uri }}
+
+Cheers,
+Armaan from Loop Zero

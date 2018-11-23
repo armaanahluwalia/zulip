@@ -798,7 +798,7 @@ def do_start_email_change_process(user_profile: UserProfile, new_email: str) -> 
         'activate_url': activation_url
     })
     send_email('zerver/emails/confirm_new_email', to_email=new_email,
-               from_name='Zulip Account Security', from_address=FromAddress.tokenized_no_reply_address(),
+               from_name='Loop Zero Account Security', from_address=FromAddress.tokenized_no_reply_address(),
                context=context)
 
 def compute_irc_user_fullname(email: NonBinaryStr) -> NonBinaryStr:
@@ -4394,7 +4394,7 @@ def do_send_confirmation_email(invitee: PreregistrationUser,
     activation_url = create_confirmation_link(invitee, referrer.realm.host, Confirmation.INVITATION)
     context = {'referrer_full_name': referrer.full_name, 'referrer_email': referrer.email,
                'activate_url': activation_url, 'referrer_realm_name': referrer.realm.name}
-    from_name = "%s (via Zulip)" % (referrer.full_name,)
+    from_name = "%s (via Loop Zero)" % (referrer.full_name,)
     send_email('zerver/emails/invitation', to_email=invitee.email, from_name=from_name,
                from_address=FromAddress.tokenized_no_reply_address(), context=context)
 
