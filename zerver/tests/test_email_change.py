@@ -75,7 +75,7 @@ class EmailChangeTestCase(ZulipTestCase):
         response = self.client_get(url)
 
         self.assertEqual(response.status_code, 200)
-        self.assert_in_success_response(["This confirms that the email address for your Zulip"],
+        self.assert_in_success_response(["This confirms that the email address for your"],
                                         response)
         user_profile = get_user(new_email, new_realm)
         self.assertTrue(bool(user_profile))

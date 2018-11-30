@@ -852,7 +852,7 @@ class InviteUserTest(InviteUserBase):
         # The second, from welcome-bot to the user who was invited.
         third_msg = last_3_messages[2]
         self.assertEqual(third_msg.sender.email, "welcome-bot@zulip.com")
-        self.assertTrue(third_msg.content.startswith("Hello, and welcome to Zulip!"))
+        self.assertTrue(third_msg.content.startswith("First things first"))
 
     def test_multi_user_invite(self) -> None:
         """
@@ -1279,7 +1279,7 @@ class InvitationsTestCase(InviteUserBase):
         prereg_user = PreregistrationUser.objects.get(email=invitee)
 
         # Verify and then clear from the outbox the original invite email
-        self.check_sent_emails([invitee], custom_from_name="Zulip")
+        self.check_sent_emails([invitee], custom_from_name="Loop Zero")
         from django.core.mail import outbox
         outbox.pop()
 
@@ -1303,7 +1303,7 @@ class InvitationsTestCase(InviteUserBase):
         error_result = self.client_post('/json/invites/' + str(9999) + '/resend')
         self.assert_json_error(error_result, "No such invitation")
 
-        self.check_sent_emails([invitee], custom_from_name="Zulip")
+        self.check_sent_emails([invitee], custom_from_name="Loop Zero")
 
     def test_accessing_invites_in_another_realm(self) -> None:
         invitor = UserProfile.objects.exclude(realm=get_realm('zulip')).first()
