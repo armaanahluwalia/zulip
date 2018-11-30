@@ -39,10 +39,8 @@ def create_if_missing_realm_internal_bots() -> None:
 
 def send_initial_pms(user: UserProfile) -> None:
     content = (
-        """
-Hi There!
+        """First things first, welcome to Loop Zero!
 
-First things first, welcome!
 I wanted to share a few small tips with you for using Loop Zero like a pro.
 ___
 **Subscribe to streams**

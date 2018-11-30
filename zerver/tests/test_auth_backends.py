@@ -1089,7 +1089,7 @@ class GoogleSubdomainLoginTest(GoogleOAuthTest):
         # Without the invite link, we can't create an account due to invite_required
         result = self.get_log_into_subdomain(data)
         self.assertEqual(result.status_code, 200)
-        self.assert_in_success_response(['Sign up for Zulip'], result)
+        self.assert_in_success_response(['Sign up for Loop Zero'], result)
 
         # Now confirm an invitation link works
         referrer = self.example_user("hamlet")
@@ -1099,7 +1099,7 @@ class GoogleSubdomainLoginTest(GoogleOAuthTest):
                                                Confirmation.MULTIUSE_INVITE)
 
         result = self.client_get(invite_link, subdomain="zulip")
-        self.assert_in_success_response(['Sign up for Zulip'], result)
+        self.assert_in_success_response(['Sign up for Loop Zero'], result)
 
         result = self.get_log_into_subdomain(data)
         self.assertEqual(result.status_code, 302)

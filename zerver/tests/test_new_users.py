@@ -74,7 +74,7 @@ class SendLoginEmailTest(ZulipTestCase):
             self.register("test@zulip.com", "test")
 
             # Verify that there's just 1 email for new user registration.
-            self.assertEqual(mail.outbox[0].subject, "Activate your Zulip account")
+            self.assertEqual(mail.outbox[0].subject, "Activate your Loop Zero account")
             self.assertEqual(len(mail.outbox), 1)
 
     def test_without_path_info_dont_send_login_emails_for_new_user_registration_logins(self) -> None:
