@@ -132,6 +132,8 @@ def send_apple_push_notification(user_id: int, devices: List[DeviceToken],
         # TODO obviously this should be made to actually use the async
 
         def attempt_send() -> Optional[str]:
+            logging.info("APNs: Sending for device %s",
+                         device.token)
             stream_id = client.send_notification_async(
                 device.token, payload, topic='org.loopzero.loopzero',
                 expiration=expiration)
