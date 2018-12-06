@@ -133,7 +133,7 @@ def send_apple_push_notification(user_id: int, devices: List[DeviceToken],
 
         def attempt_send() -> Optional[str]:
             stream_id = client.send_notification_async(
-                device.token, payload, topic='org.zulip.Zulip',
+                device.token, payload, topic='org.loopzero.loopzero',
                 expiration=expiration)
             try:
                 return client.get_notification_result(stream_id)
