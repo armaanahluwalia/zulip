@@ -195,7 +195,7 @@ def build_message_list(user_profile: UserProfile, messages: List[Message]) -> Li
             header = "%s > %s" % (stream.name, message.topic_name())
             stream_link = stream_narrow_url(user_profile.realm, stream)
             topic_link = topic_narrow_url(user_profile.realm, stream, message.topic_name())
-            header_html = "<a href='%s'>%s</a> > <a href='%s'>%s</a>" % (
+            header_html = "<a style='color: #ffffff;' href='%s'>%s</a> > <a style='color: #ffffff;' href='%s'>%s</a>" % (
                 stream_link, stream.name, topic_link, message.topic_name())
         return {"plain": header,
                 "html": header_html,
@@ -365,7 +365,7 @@ def do_send_missedmessage_events_reply_in_zulip(user_profile: UserProfile,
             'realm_str': user_profile.realm.name,
         })
 
-    from_name = "Zulip missed messages"  # type: str
+    from_name = "Loop Zero missed messages"  # type: str
     from_address = FromAddress.NOREPLY
     if len(senders) == 1 and settings.SEND_MISSED_MESSAGE_EMAILS_AS_USER:
         # If this setting is enabled, you can reply to the Zulip
@@ -520,7 +520,7 @@ def enqueue_welcome_emails(user: UserProfile, realm_creation: bool=False) -> Non
         context['getting_started_link'] = (user.realm.uri +
                                            '/help/getting-your-organization-started-with-zulip')
     else:
-        context['getting_started_link'] = "https://zulipchat.com"
+        context['getting_started_link'] = "https://www.loopzero.in"
 
     from zproject.backends import email_belongs_to_ldap, require_email_format_usernames
     if email_belongs_to_ldap(user.realm, user.email) and not require_email_format_usernames(user.realm):
