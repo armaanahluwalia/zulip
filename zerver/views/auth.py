@@ -163,7 +163,7 @@ def login_or_register_remote_user(request: HttpRequest, remote_username: Optiona
         }
         # We can't use HttpResponseRedirect, since it only allows HTTP(S) URLs
         response = HttpResponse(status=302)
-        response['Location'] = 'zulip://login?' + urllib.parse.urlencode(params)
+        response['Location'] = 'loopzero://login?' + urllib.parse.urlencode(params)
         # Maybe sending 'user_logged_in' signal is the better approach:
         #   user_logged_in.send(sender=user_profile.__class__, request=request, user=user_profile)
         # Not doing this only because over here we don't add the user information
