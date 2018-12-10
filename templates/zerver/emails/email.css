@@ -50,7 +50,7 @@ table td {
 }
 
 .main {
-    background-color: hsl(0, 0%, 100%);
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
     width: 100%;
 }
@@ -74,7 +74,7 @@ table td {
 .footer p,
 .footer span,
 .footer a {
-    color: hsl(0, 0%, 60%);
+    color: rgb(153, 153, 153);
     font-size: 12px;
     text-align: center;
 }
@@ -153,7 +153,7 @@ a:hover {
 }
 
 .important {
-    border-bottom: 3px solid hsl(195, 31%, 87%);
+    border-bottom: 3px solid rgb(212, 227, 232);
 }
 
 .button {
@@ -161,12 +161,12 @@ a:hover {
     padding: 10px 0px;
     margin: 20px auto;
     width: 200px;
-    background-color: hsl(236, 62%, 61%);
+    background-color: rgb(94, 102, 217);
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
     outline: none;
-    color: hsl(0, 0%, 100%);
+    color: rgb(255, 255, 255);
     font-family: sans-serif;
     text-decoration: none;
     text-align: center;
@@ -175,7 +175,7 @@ a:hover {
 }
 
 a.button:hover {
-    color: hsl(163, 73%, 88%);
+    color: rgb(202, 247, 234);
     text-decoration: none;
 }
 
