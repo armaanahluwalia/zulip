@@ -122,6 +122,11 @@ html {
     font-weight: 400;
 }
 
+.new-style {
+    .forgot-password-container {
+        text-align: center;
+    }
+}
 .app-main.find-account-page-container {
     width: 500px;
     font-weight: 400;
@@ -473,7 +478,98 @@ html {
     margin-bottom: 5px;
     text-align: center;
 }
-
+.new-style {
+    button {
+        width: 100%;
+        padding: 20px 40px;
+        color: white;
+        font-weight: 800;
+        font-size: 16px;
+        background: rgb(105, 133, 214); /* Old browsers */
+        background: -moz-linear-gradient(-45deg, rgba(105, 133, 214, 1) 0%, rgba(118, 79, 184, 1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, rgba(105, 133, 214, 1) 0%, rgba(118, 79, 184, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, rgba(105, 133, 214, 1) 0%, rgba(118, 79, 184, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6985d6', endColorstr='#764fb8', GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        border: 0;
+        border-radius: 5px;
+    }
+}
+.login-page-new {
+    a {
+        font-weight: bold;
+    }
+    padding: 80px;
+    display: flex;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    .left,
+    .right {
+        flex: 1;
+        margin: 0 50px;
+    }
+    input {
+        font-size: 18px;
+        padding: 25px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid rgb(189, 189, 189);
+        box-shadow: none;
+    }
+    .alert {
+        margin-top: 0;
+        width: auto;
+    }
+    button {
+        width: 100%;
+        padding: 20px 40px;
+        color: white;
+        font-weight: 800;
+        font-size: 16px;
+        background: rgb(105, 133, 214); /* Old browsers */
+        background: -moz-linear-gradient(-45deg, rgba(105, 133, 214, 1) 0%, rgba(118, 79, 184, 1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, rgba(105, 133, 214, 1) 0%, rgba(118, 79, 184, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, rgba(105, 133, 214, 1) 0%, rgba(118, 79, 184, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6985d6', endColorstr='#764fb8', GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        border: 0;
+        border-radius: 5px;
+    }
+    .input-box {
+        margin: 20px 0;
+    }
+    label,
+    .control-label {
+        color: rgb(60, 62, 72);
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-size: 16px;
+        text-align: left;
+    }
+    .site-description {
+        font-size: 24px;
+        color: rgb(56, 59, 75);
+        width: 10.3em;
+        margin: auto;
+        margin-top: 80px;
+        line-height: 1.5em;
+        em {
+            font-weight: 800;
+            color: rgb(79, 88, 137);
+            font-style: normal;
+        }
+        u {
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid rgb(27, 102, 255);
+        }
+    }
+    .logo-image {
+        width: 234px;
+    }
+    .actions {
+        margin-top: 10px;
+    }
+}
 .login-page-container input[type=submit] {
     color: hsl(0, 0%, 67%);
     border: 1px solid hsl(0, 0%, 87%);
@@ -852,6 +948,11 @@ button.login-google-button {
 }
 
 @media (max-width: 795px) {
+    .login-page-new {
+        display: block;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
     .register-account #registration {
         padding: 10px;
     }
@@ -910,6 +1011,14 @@ button.login-google-button {
 }
 
 @media (max-width: 500px) {
+    .login-page-new {
+        .login-form {
+            width: 100%;
+        }
+        .site-description {
+            width: auto;
+        }
+    }
     .new-style .get-started {
         font-size: 1.6em;
     }
