@@ -23,7 +23,9 @@ Share Content: To engage with the community and share content, all you have to d
 
 Is there a mobile app?
 ======================
-Absolutely! Loop Zero leverages a software called Zulip. To use Loop zero on your cellphone or desktop computer we suggest downloading the Zulip desktop and mobile apps at https://zulipchat.com/apps.
+Absolutely! Loop Zero is currently on iOS and Android only. Here are some handy links!
+Loop Zero for iOS on the App Store - https://itunes.apple.com/in/app/loop-zero/id1445613350?mt=8
+Loop Zero for Android on the Play Store - https://play.google.com/store/apps/details?id=com.loopzero
 
 To access your Loop Zero account from the apps, just enter this Organization URL when prompted:
 
