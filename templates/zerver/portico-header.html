@@ -26,12 +26,7 @@
 
             {% if register_link_disabled %}
             {% elif only_sso %}
-                <a href="{{ url('login-sso') }}">{{ _('Log in') }}</a>
-            {% else %}
-                {% if user_is_authenticated %}
-                {% else %}
-                <a href="{{ url('register') }}">{{ _('Sign up') }}</a>
-                {% endif %}
+            <a href="{{ url('login-sso') }}">{{ _('Log in') }}</a>
             {% endif %}
         </div>
     </div>

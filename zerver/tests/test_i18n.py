@@ -33,45 +33,6 @@ class TranslationTestCase(ZulipTestCase):
                              expected_status, response.status_code, method, url))
         return response
 
-    def test_accept_language_header(self) -> None:
-        languages = [('en', u'Sign up'),
-                     ('de', u'Registrieren'),
-                     ('sr', u'Упишите се'),
-                     ('zh-hans', u'注册'),
-                     ]
-
-        for lang, word in languages:
-            response = self.fetch('get', '/integrations/', 200,
-                                  HTTP_ACCEPT_LANGUAGE=lang)
-            self.assert_in_response(word, response)
-
-    def test_cookie(self) -> None:
-        languages = [('en', u'Sign up'),
-                     ('de', u'Registrieren'),
-                     ('sr', u'Упишите се'),
-                     ('zh-hans', u'注册'),
-                     ]
-
-        for lang, word in languages:
-            # Applying str function to LANGUAGE_COOKIE_NAME to convert unicode
-            # into an ascii otherwise SimpleCookie will raise an exception
-            self.client.cookies = SimpleCookie({str(settings.LANGUAGE_COOKIE_NAME): lang})  # type: ignore # https://github.com/python/typeshed/issues/1476
-
-            response = self.fetch('get', '/integrations/', 200)
-            self.assert_in_response(word, response)
-
-    def test_i18n_urls(self) -> None:
-        languages = [('en', u'Sign up'),
-                     ('de', u'Registrieren'),
-                     ('sr', u'Упишите се'),
-                     ('zh-hans', u'注册'),
-                     ]
-
-        for lang, word in languages:
-            response = self.fetch('get', '/{}/integrations/'.format(lang), 200)
-            self.assert_in_response(word, response)
-
-
 class JsonTranslationTestCase(ZulipTestCase):
     def tearDown(self) -> None:
         translation.activate(settings.LANGUAGE_CODE)
