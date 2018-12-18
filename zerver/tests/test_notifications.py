@@ -37,7 +37,7 @@ class TestFollowupEmails(ZulipTestCase):
         email_data = ujson.loads(scheduled_emails[0].data)
         self.assertEqual(email_data["context"]["email"], self.example_email("hamlet"))
         self.assertEqual(email_data["context"]["is_realm_admin"], False)
-        self.assertEqual(email_data["context"]["getting_started_link"], "https://zulipchat.com")
+        self.assertEqual(email_data["context"]["getting_started_link"], "https://www.loopzero.in")
         self.assertNotIn("ldap_username", email_data["context"])
 
         ScheduledEmail.objects.all().delete()
@@ -129,7 +129,7 @@ class TestMissedMessages(ZulipTestCase):
         else:
             reply_to_emails = ["noreply@testserver"]
         msg = mail.outbox[0]
-        from_email = formataddr(("Zulip missed messages", FromAddress.NOREPLY))
+        from_email = formataddr(("Loop Zero missed messages", FromAddress.NOREPLY))
         self.assertEqual(len(mail.outbox), 1)
         if send_as_user:
             from_email = '"%s" <%s>' % (othello.full_name, othello.email)

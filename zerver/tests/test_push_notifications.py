@@ -720,7 +720,7 @@ class TestAPNs(PushNotificationTest):
             mock_logging.warning.assert_called_with(
                 'APNs: Failed to send for user %d to device %s: %s',
                 self.user_profile.id, self.devices()[0].token, 'HTTP error, retries exhausted')
-            self.assertEqual(mock_logging.info.call_count, 1)
+            self.assertEqual(mock_logging.info.call_count, 5)
 
     def test_modernize_apns_payload(self) -> None:
         payload = {'alert': 'Message from Hamlet',

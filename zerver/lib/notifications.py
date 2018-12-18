@@ -195,7 +195,10 @@ def build_message_list(user_profile: UserProfile, messages: List[Message]) -> Li
             header = "%s > %s" % (stream.name, message.topic_name())
             stream_link = stream_narrow_url(user_profile.realm, stream)
             topic_link = topic_narrow_url(user_profile.realm, stream, message.topic_name())
-            header_html = "<a style='color: #ffffff;' href='%s'>%s</a> > <a style='color: #ffffff;' href='%s'>%s</a>" % (
+            header_html = """
+            <a style='color: #ffffff;' href='%s'>%s</a> >
+             <a style='color: #ffffff;' href='%s'>%s</a>
+            """ % (
                 stream_link, stream.name, topic_link, message.topic_name())
         return {"plain": header,
                 "html": header_html,

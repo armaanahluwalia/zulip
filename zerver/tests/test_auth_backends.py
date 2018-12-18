@@ -440,7 +440,7 @@ class GitHubAuthBackendTest(ZulipTestCase):
             headers['HTTP_HOST'] = subdomain + ".testserver"
         if mobile_flow_otp is not None:
             params['mobile_flow_otp'] = mobile_flow_otp
-            headers['HTTP_USER_AGENT'] = "ZulipAndroid"
+            headers['HTTP_USER_AGENT'] = "LoopZero"
         if is_signup is not None:
             url = "/accounts/register/social/github"
         params['next'] = next
@@ -684,14 +684,14 @@ class GitHubAuthBackendTest(ZulipTestCase):
         redirect_url = result['Location']
         parsed_url = urllib.parse.urlparse(redirect_url)
         query_params = urllib.parse.parse_qs(parsed_url.query)
-        self.assertEqual(parsed_url.scheme, 'zulip')
+        self.assertEqual(parsed_url.scheme, 'loopzero')
         self.assertEqual(query_params["realm"], ['http://zulip.testserver'])
         self.assertEqual(query_params["email"], [self.example_email("hamlet")])
         encrypted_api_key = query_params["otp_encrypted_api_key"][0]
         hamlet_api_keys = get_all_api_keys(self.example_user('hamlet'))
         self.assertIn(otp_decrypt_api_key(encrypted_api_key, mobile_flow_otp), hamlet_api_keys)
         self.assertEqual(len(mail.outbox), 1)
-        self.assertIn('Zulip on Android', mail.outbox[0].body)
+        self.assertIn('Loop Zero', mail.outbox[0].body)
 
     def test_github_oauth2_registration_existing_account(self) -> None:
         """If the user already exists, signup flow just logs them in"""
@@ -840,7 +840,7 @@ class GoogleOAuthTest(ZulipTestCase):
             headers['HTTP_HOST'] = subdomain + ".testserver"
         if mobile_flow_otp is not None:
             params['mobile_flow_otp'] = mobile_flow_otp
-            headers['HTTP_USER_AGENT'] = "ZulipAndroid"
+            headers['HTTP_USER_AGENT'] = "LoopZero/Android"
         if is_signup is not None:
             params['is_signup'] = is_signup
         params['next'] = next
@@ -943,14 +943,14 @@ class GoogleSubdomainLoginTest(GoogleOAuthTest):
         redirect_url = result['Location']
         parsed_url = urllib.parse.urlparse(redirect_url)
         query_params = urllib.parse.parse_qs(parsed_url.query)
-        self.assertEqual(parsed_url.scheme, 'zulip')
+        self.assertEqual(parsed_url.scheme, 'loopzero')
         self.assertEqual(query_params["realm"], ['http://zulip.testserver'])
         self.assertEqual(query_params["email"], [self.user_profile.email])
         encrypted_api_key = query_params["otp_encrypted_api_key"][0]
         hamlet_api_keys = get_all_api_keys(self.user_profile)
         self.assertIn(otp_decrypt_api_key(encrypted_api_key, mobile_flow_otp), hamlet_api_keys)
         self.assertEqual(len(mail.outbox), 1)
-        self.assertIn('Zulip on Android', mail.outbox[0].body)
+        self.assertIn('Loop Zero on Android', mail.outbox[0].body)
 
     def get_log_into_subdomain(self, data: Dict[str, Any], *, key: Optional[str]=None, subdomain: str='zulip') -> HttpResponse:
         token = signing.dumps(data, salt=_subdomain_token_salt, key=key)
@@ -1922,33 +1922,33 @@ class TestZulipRemoteUserBackend(ZulipTestCase):
         result = self.client_post('/accounts/login/sso/',
                                   dict(mobile_flow_otp="1234"),
                                   REMOTE_USER=email,
-                                  HTTP_USER_AGENT = "ZulipAndroid")
+                                  HTTP_USER_AGENT = "LoopZeroAndroid")
         self.assertIs(get_session_dict_user(self.client.session), None)
         self.assert_json_error_contains(result, "Invalid OTP", 400)
 
         result = self.client_post('/accounts/login/sso/',
                                   dict(mobile_flow_otp="invalido" * 8),
                                   REMOTE_USER=email,
-                                  HTTP_USER_AGENT = "ZulipAndroid")
+                                  HTTP_USER_AGENT = "LoopZero/Android")
         self.assertIs(get_session_dict_user(self.client.session), None)
         self.assert_json_error_contains(result, "Invalid OTP", 400)
 
         result = self.client_post('/accounts/login/sso/',
                                   dict(mobile_flow_otp=mobile_flow_otp),
                                   REMOTE_USER=email,
-                                  HTTP_USER_AGENT = "ZulipAndroid")
+                                  HTTP_USER_AGENT = "LoopZero/Android")
         self.assertEqual(result.status_code, 302)
         redirect_url = result['Location']
         parsed_url = urllib.parse.urlparse(redirect_url)
         query_params = urllib.parse.parse_qs(parsed_url.query)
-        self.assertEqual(parsed_url.scheme, 'zulip')
+        self.assertEqual(parsed_url.scheme, 'loopzero')
         self.assertEqual(query_params["realm"], ['http://zulip.testserver'])
         self.assertEqual(query_params["email"], [self.example_email("hamlet")])
         encrypted_api_key = query_params["otp_encrypted_api_key"][0]
         hamlet_api_keys = get_all_api_keys(self.example_user('hamlet'))
         self.assertIn(otp_decrypt_api_key(encrypted_api_key, mobile_flow_otp), hamlet_api_keys)
         self.assertEqual(len(mail.outbox), 1)
-        self.assertIn('Zulip on Android', mail.outbox[0].body)
+        self.assertIn('Loop Zero on Android', mail.outbox[0].body)
 
     def test_redirect_to(self) -> None:
         """This test verifies the behavior of the redirect_to logic in
